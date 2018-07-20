@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hello User</title>
+  </head>
+  <body>
+
+    <div id="root"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
+    <script type="text/babel">
+
+      class Counter extends React.Component {
+        constructor(props){
+            super(props);
+            this.state = {
+                department: 1
+            }
+        }
+        render() {
+          return (
+            <div>
+              <h3>Name: {this.props.name} {this.props.lastname}</h3>
+              <h3>Deparment: {this.state.department}</h3>
+            </div>
+          );
+        }
+      }
+
+      const user_info = {
+        name: 'Jane',
+        lastname: 'Doe',
+      }
+
+      ReactDOM.render(
+        <Counter
+          name={user_info.name}
+          lastname={user_info.lastname}
+        />,
+          document.getElementById('root')
+      );
+
+    </script>
+  </body>
+</html>
