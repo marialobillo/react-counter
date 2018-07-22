@@ -31,6 +31,12 @@ class App extends Component {
       newTodoDescription: e.target.value
     });
   }
+  deleteTodo(index){
+    console.log('Delete the task', index);
+    this.setState({
+      todos: this.state.todos.filter((todo, i) => i !== index)
+    });
+  }
   render() {
     return (
       <div className="App">
@@ -41,6 +47,7 @@ class App extends Component {
               description={todo.description}
               isCompleted={todo.isComleted}
               toggleComplete={() => this.toggleComplete(index)}
+              deleteTodo={() => this.deleteTodo(index)}
               />
            )}
         </ul>
